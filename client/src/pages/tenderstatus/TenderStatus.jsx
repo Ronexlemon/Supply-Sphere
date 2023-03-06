@@ -68,7 +68,7 @@ function TenderStatus() {
   // },[])
   useEffect(() => {
     Web3ModalRef.current = new Web3Modal({
-      network: "fantomTestnet",
+      network: "PolygonzkEVM",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,
