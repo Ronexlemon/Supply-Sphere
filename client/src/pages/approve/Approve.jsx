@@ -10,18 +10,18 @@ function Approve() {
   const [walletconnect, setWalletConnect] = useState(false);
   const [BidTenders, setBidTenders] = useState([]);
   const [index, setIndex] = useState();
-  const ContractBiderAddress = "0x1F949e4688F0933B699899a04ad4f9E76112b560"; 
+  const ContractBiderAddress = "0x1D7478635b1e6C0001432a5a7e20Fd273273Aa32"; 
   const Web3ModalRef = useRef();
   //provide sgner or provider
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await Web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
-    // check if network is fantomTestnet
+    // check if network is polygon hermez
     const { chainId } = await web3Provider.getNetwork();
    
-    if (chainId !== 4002) {
-      window.alert("Change network to FantomTestnet");
-      throw new Error("Change network to FantomTestnet ");
+    if (chainId !== 1442) {
+      window.alert("Change network to polygon zkevm");
+      throw new Error("Change network to polygon zkevm ");
     }
     if (needSigner) {
       const signer = web3Provider.getSigner();

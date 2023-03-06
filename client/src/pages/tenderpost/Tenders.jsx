@@ -15,7 +15,7 @@ const Tenders = () => {
   let btnapprove = useRef(null);
   //let Tenders =[];
   const [Tenders, setTenders] = useState([]);
-  const TenderOwnerAddress = "0x1F949e4688F0933B699899a04ad4f9E76112b560";
+  const TenderOwnerAddress = "0x1D7478635b1e6C0001432a5a7e20Fd273273Aa32";
   const [tenderslength, setLength] = useState(0);
   const web3ModalRef = useRef();
   const [walletconnect, setWalletConnect] = useState(false);
@@ -55,13 +55,13 @@ const Tenders = () => {
     //connect metamask
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
-    //check if user is connected to Fantom network
+    //check if user is connected to polygon hermez
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 4002) {
-      window.alert("Change network to FantomTestnet");
-      throw new Error("Change network To FantomTestnet ");
+    if (chainId !== 1442) {
+      window.alert("Change network to Polygon zkevm");
+      throw new Error("Change network To Polygon zkevm ");
     }
-    // alert("network is fantom")
+    
     //if need signer for transactions
     if (needSigner) {
       const signer = web3Provider.getSigner();

@@ -8,7 +8,7 @@ import DisplayBidsTenders from "./DisplayMyBids"
 
 const MyBidsTenders = () => {
   const [Tenders, setTenders] = useState([]);
-  const TenderOwnerAddress = "0x1F949e4688F0933B699899a04ad4f9E76112b560";
+  const TenderOwnerAddress = "0x1D7478635b1e6C0001432a5a7e20Fd273273Aa32";
   const [tenderslength, setLength] = useState(0);
   const [userAccount, setUserAccount] = useState(null);
   const web3ModalRef = useRef();
@@ -76,11 +76,11 @@ const MyBidsTenders = () => {
     const accounts = web3.currentProvider.selectedAddress;
    
     setUserAccount(accounts);
-    //check if user is connected to fantom network
+    //check if user is connected to polygon hermez
     const { chainId } = await web3Provider.getNetwork();
-    if (Number(chainId) !== 4002) {
-      window.alert("Change network to fantomTestnet");
-      throw new Error("Change network To FantomTestnet");
+    if (Number(chainId) !== 1442) {
+      window.alert("Change network to polygon zkevm");
+      throw new Error("Change network To polygon zkevm");
     }
     const signer = web3Provider.getSigner();
     // const accounts = await signer.getAddress();
