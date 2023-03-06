@@ -6,7 +6,7 @@ const KEY = process.env.PRIVATE_KEY;
 module.exports = {
   solidity: "0.8.17",
   networks:{
-    fantomTestnet :{
+    PolygonzkEVM :{
       url: `https://rpc.public.zkevm-test.net`,
       chainId: 1442,
       accounts: [KEY],
