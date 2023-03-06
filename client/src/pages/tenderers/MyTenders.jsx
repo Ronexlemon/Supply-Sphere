@@ -13,7 +13,7 @@ import DisplayMyTenders from "./DisplayMyTenders";
 const AllMyTenders = () => {
    
   const [Tenders, setTenders] = useState([]);
-  const TenderOwnerAddress = "0x1F949e4688F0933B699899a04ad4f9E76112b560";
+  const TenderOwnerAddress = "0x1D7478635b1e6C0001432a5a7e20Fd273273Aa32";
   const [tenderslength, setLength] = useState(0);
   const [userAccount,setUserAccount] = useState(null);
   const Web3ModalRef = useRef();
@@ -95,9 +95,9 @@ const AllMyTenders = () => {
     const accounts = await signer.getAddress();
      setUserAccount(accounts);
      console.log("chain idssss",chainId)
-    if (chainId !== 4002) {
-      window.alert("Change network to FantomTestnet");
-      throw new Error("Change network to FantomTestnet ");
+    if (chainId !== 1442) {
+      window.alert("Change network to polygon zkevm");
+      throw new Error("Change network to polygon zkevm ");
     }
     if (needSigner) {
       const signer = web3Provider.getSigner();
@@ -107,7 +107,7 @@ const AllMyTenders = () => {
   };
   useEffect(() => {
     Web3ModalRef.current = new Web3Modal({
-      network: "fantomTestnet",
+      network: "PolygonzkEVM",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,

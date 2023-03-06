@@ -41,21 +41,21 @@ const Navbar = () => {
   const [walletconnect, setWalletConnect] = useState(false);
   const [BidTenders, setBidTenders] = useState([]);
   const [index, setIndex] = useState();
-  const ContractBiderAddress = "0x1F949e4688F0933B699899a04ad4f9E76112b560"; 
+  const ContractBiderAddress = "0x1D7478635b1e6C0001432a5a7e20Fd273273Aa32"; 
   const Web3ModalRef = useRef();
   //provide sugner or provider
   const connectWallet = async (needSigner = false) => {
     const provider = await Web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
-    // check if network is fantomTestnet
+    // check if network is polygon hermez
     const { chainId } = await web3Provider.getNetwork();
      const signer = web3Provider.getSigner();
      const accounts = await signer.getAddress();
     //setUserAccount(accounts);
    
-    if (chainId !== 4002) {
-      window.alert("Change network to FantomTestnet");
-      throw new Error("Change network to FantomTestnet ");
+    if (chainId !== 1442) {
+      window.alert("Change network to polygon zkevm");
+      throw new Error("Change network to polygon zkevm ");
      
     }
     setWalletConnect(true)
@@ -67,7 +67,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     Web3ModalRef.current = new Web3Modal({
-      network: "fantomTestnet",
+      network: "PolygonzkEVM",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,
