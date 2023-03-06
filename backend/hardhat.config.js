@@ -7,8 +7,8 @@ module.exports = {
   solidity: "0.8.17",
   networks:{
     fantomTestnet :{
-      url: `https://rpc.ankr.com/fantom_testnet`,
-      chainId: 4002,
+      url: `https://rpc.public.zkevm-test.net`,
+      chainId: 1402,
       accounts: [KEY],
       
     },
