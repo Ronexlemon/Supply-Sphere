@@ -8,7 +8,7 @@ module.exports = {
   networks:{
     fantomTestnet :{
       url: `https://rpc.public.zkevm-test.net`,
-      chainId: 1402,
+      chainId: 1442,
       accounts: [KEY],
       
     },
